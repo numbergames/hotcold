@@ -1,4 +1,5 @@
-
+//new game and add guess only, for now. 
+//reducers and actions do not have to be a one to one. 
 export const INCR_COUNT = 'INCR_COUNT';
 export const incrCount = currentCount => ({
 	type: INCR_COUNT,
@@ -6,9 +7,10 @@ export const incrCount = currentCount => ({
 })
 
 export const NEW_GAME = 'NEW_GAME';
-export const newGame = {
-	type: NEW_GAME
-}
+export const newGame = () => ({
+	type: NEW_GAME,
+	magicNum: Math.floor(Math.random() * 100) + 1 
+})
 
 export const ADD_GUESS = 'ADD_GUESS';
 export const addGuess = num => ({
