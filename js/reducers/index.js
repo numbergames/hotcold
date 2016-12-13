@@ -7,9 +7,27 @@ const emptyState = {
 }
 
 export const mainReducer = (state = emptyState, action) => {
+
 	if (action.type === actions.ADD_GUESS) {
 		
-		return { ...state, guessedNumbers: [...state.guessedNumbers, action.num], feedback: "try again"}
+		let feedback = 'You won!'
+		let guessDiff = Math.abs(action.num - state.answer);
+		console.log(guessDiff);
+
+		if (guessDiff <= 10){
+			feedback = 'hot';
+		}
+		else if((guessDiff > 10) && (guessDiff <= 20)){
+			feedback = 'kinda hot';
+		}
+		else if((guessDiff > 20) && (guessDiff <= 30)){
+			feedback = 'kindof cold';
+		}
+		else {
+			feedback = 'cold'
+		} 
+
+		return { ...state, guessedNumbers: [...state.guessedNumbers, action.num], feedback}
 	}
 	if(action.type === actions.NEW_GAME) {
 		return { ...state, answer: action.magicNum }
