@@ -3,7 +3,8 @@ import * as actions from '../actions/index';
 const emptyState = {
 	guessedNumbers: [],
 	answer: 0,
-	feedback: 'make a guess'
+	feedback: 'make a guess',
+	count: 0
 }
 
 export const mainReducer = (state = emptyState, action) => {
@@ -12,6 +13,9 @@ export const mainReducer = (state = emptyState, action) => {
 		
 		let feedback = 'You won!'
 		let guessDiff = Math.abs(action.num - state.answer);
+		let count = state.count
+		console.log(action.num);
+		console.log(state.answer)
 		console.log(guessDiff);
 
 		if (guessDiff <= 10){
@@ -26,11 +30,12 @@ export const mainReducer = (state = emptyState, action) => {
 		else {
 			feedback = 'cold'
 		} 
+		count ++
 
-		return { ...state, guessedNumbers: [...state.guessedNumbers, action.num], feedback}
+		return { ...state, guessedNumbers: [...state.guessedNumbers, action.num], feedback, count}
 	}
 	if(action.type === actions.NEW_GAME) {
-		return { ...state, answer: action.magicNum }
+		return { ...state, answer: action.magicNum, guessedNumbers: [], feedback: 'make a guess', count: 0 }
 	}
 	return state;
 };

@@ -14,8 +14,17 @@ let unsubscribe = store.subscribe(() => {
 
 
 	store.dispatch(actions.newGame())
+	store.dispatch(actions.addGuess(95))
+	store.dispatch(actions.addGuess(85))
+	store.dispatch(actions.addGuess(75))
+	store.dispatch(actions.addGuess(65))
+	store.dispatch(actions.addGuess(55))
 	store.dispatch(actions.addGuess(45))
-	store.dispatch(actions.addGuess(3))
+	store.dispatch(actions.addGuess(35))
+	store.dispatch(actions.addGuess(25))
+	store.dispatch(actions.addGuess(15))
+	store.dispatch(actions.addGuess(5))
+	store.dispatch(actions.newGame())
 
 
 unsubscribe();
