@@ -3,15 +3,12 @@ import React, { Component } from 'react'
 export default class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      guess:
-    };
-    this.onSubmit = this.submit.bind(this)
+    this.onSubmit = this.onSubmit.bind(this);
   }
 
   onSubmit() {
-    console.log('tetst')
-    // console.log(this.refs);
+    console.log(this.textInput.value)
+
   }
 
 	render() {
@@ -19,9 +16,9 @@ export default class Form extends Component {
       <div>
   			<input 
           type="text" 
-          value={this.state.guess}
-          ref="newGuess" 
-          className="input"/>
+          ref={(input) => { this.textInput = input; }}
+          className="input"
+        />
   			<button 
           type="button" 
           className="submit" 
@@ -31,3 +28,4 @@ export default class Form extends Component {
   	);
   }
 }
+
