@@ -1,14 +1,21 @@
 import React from 'react'
 import HelpNew from './help-new'
 import GameContainer from './gamecontainer'
+import { connect } from 'react-redux'
+import * as actions from '../actions'
 
-export default function MainContainer() {
+// function MainContainer(props) {function body...}
+const MainContainer = (props) => {
+  const resetGame = () => {
+    props.dispatch(actions.newGame());
+  };
 
 	return (
 		<div className="MainContainer">
-			<HelpNew newGame={() => {console.log('new game')}} />
-			<GameContainer/>
+			<HelpNew newGame={resetGame} />
+			<GameContainer />
 		</div>
-
-		)
+	);
 }
+
+export default connect()(MainContainer);

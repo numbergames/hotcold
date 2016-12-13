@@ -15,17 +15,17 @@ let unsubscribe = store.subscribe(() => {
 const jsx = <MainContainer/>
 const d = document.getElementById('app');
 
-store.dispatch(actions.newGame())
-
-store.dispatch(actions.addGuess(43))
-store.dispatch(actions.addGuess(81))
+// store.dispatch(actions.newGame())
+//
+// store.dispatch(actions.addGuess(43))
+// store.dispatch(actions.addGuess(81))
 // store.dispatch(actions.newGame())
 
 ReactDOM.render(
 	<Provider store={ store }>
 		<MainContainer />
 	</Provider>, d
-	);
+);
 
 
 unsubscribe();

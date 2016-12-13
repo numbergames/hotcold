@@ -9,7 +9,7 @@ const emptyState = {
 
 export const mainReducer = (state = emptyState, action) => {
 	if (action.type === actions.ADD_GUESS) {
-		var response = 'make your first guess';
+		var response = '';
 		var ln = state.answer;
 		var un = action.num;
 		var diff = Math.abs(ln - un)

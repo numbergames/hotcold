@@ -7,25 +7,24 @@ export default class Form extends Component {
   }
 
   onSubmit() {
-    console.log(this.textInput.value)
-
+    // console.log(this.textInput.value)
+    this.props.onSubmit(this.textInput.value);
   }
 
 	render() {
     return (
       <div>
-  			<input 
-          type="text" 
+  			<input
+          type="text"
           ref={(input) => { this.textInput = input; }}
           className="input"
         />
-  			<button 
-          type="button" 
-          className="submit" 
+  			<button
+          type="button"
+          className="submit"
           onClick={this.onSubmit}>Guess
         </button>
       </div>
   	);
   }
 }
-
