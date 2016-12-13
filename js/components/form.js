@@ -3,7 +3,10 @@ import React, { Component } from 'react'
 export default class Form extends Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      guess:
+    };
+    this.onSubmit = this.submit.bind(this)
   }
 
   onSubmit() {
@@ -14,9 +17,15 @@ export default class Form extends Component {
 	render() {
     return (
       <div>
-  			<input type="text" ref="newGuess" className="input"/>
-  			<button type="button" className="submit" onClick={this.onSubmit}>
-          Guess
+  			<input 
+          type="text" 
+          value={this.state.guess}
+          ref="newGuess" 
+          className="input"/>
+  			<button 
+          type="button" 
+          className="submit" 
+          onClick={this.onSubmit}>Guess
         </button>
       </div>
   	);
