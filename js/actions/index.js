@@ -1,10 +1,5 @@
 export const INCR_COUNT = 'INCR_COUNT';
 
-export const incrCount = currentCount => ({
-	type: INCR_COUNT,
-	currentCount: 4
-})
-
 export const NEW_GAME = 'NEW_GAME';
 export const newGame = () => ({
 	type: NEW_GAME,

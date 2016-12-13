@@ -7,6 +7,7 @@ let unsubscribe = store.subscribe(() => {
     console.log(store.getState());
 }) 
 
+	store.dispatch(actions.newGame())
 	store.dispatch(actions.addGuess(10))
 	store.dispatch(actions.addGuess(13))
 	store.dispatch(actions.addGuess(11))
