@@ -11,14 +11,18 @@ export const mainReducer = (state = emptyState, action) => {
 
 	if (action.type === actions.ADD_GUESS) {
 		
-		let feedback = 'You won!'
+		let feedback = ""
 		let guessDiff = Math.abs(action.num - state.answer);
 		let count = state.count
 		console.log(action.num);
 		console.log(state.answer)
 		console.log(guessDiff);
 
-		if (guessDiff <= 10){
+
+		if (guessDiff === 0){
+			feedback = 'You Won!';
+		}
+		else if (guessDiff <= 10){
 			feedback = 'hot';
 		}
 		else if((guessDiff > 10) && (guessDiff <= 20)){
