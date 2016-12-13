@@ -4,8 +4,8 @@ export default function HelpNew(props) {
 
 	return (
 		<div className="navbar">
-      <Help />
-      <New newGame={props.newGame} />
+      {"help"}
+      <button type="submit" onSubmit={props.newGame}>New</button>
 		</div>
 	);
 }

@@ -4,7 +4,7 @@ export default function Feedback(props) {
 
 	return (
 		<div className="feedback">
-      {props.children.feedbackMessage}
+      {'test message'}
 		</div>
 	);
 }
