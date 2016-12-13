@@ -4,7 +4,7 @@ export default function GuessCount(props) {
 
 	return (
 		<div className="guess-count">
-      {'the'}
+      {'5'}
 		</div>
 	);
 }

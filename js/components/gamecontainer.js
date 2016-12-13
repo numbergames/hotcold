@@ -6,13 +6,12 @@ import Guesses from './guesses'
 
 export default function GameContainer() {
 
-	return(
+	return (
 		<div className="gameContainer">
 			<Feedback />
 			<Form />
 			<GuessCount />
 			<Guesses />
 		</div>
-
-		)
+	)
 }

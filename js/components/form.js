@@ -1,10 +1,24 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-export default function Form(props) {
-	return (
-		<form className={"form"}>
-			<input onChange={props} type="text" className="input"/>
-			<input type="submit" className="submit"/>
-		</form>
- 		)
+export default class Form extends Component {
+  constructor(props) {
+    super(props);
+
+  }
+
+  onSubmit() {
+    console.log('tetst')
+    // console.log(this.refs);
+  }
+
+	render() {
+    return (
+      <div>
+  			<input type="text" ref="newGuess" className="input"/>
+  			<button type="button" className="submit" onClick={this.onSubmit}>
+          Guess
+        </button>
+      </div>
+  	);
+  }
 }

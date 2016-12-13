@@ -6,22 +6,21 @@ import store from './store'
 import MainContainer from './components/'
 
 
-
 // subscribe is a method that listens for changes on the store
-let unsubscribe = store.subscribe(() => {
-    console.log(store.getState());
-}) 
+// let unsubscribe = store.subscribe(() => {
+//     console.log(store.getState());
+// })
 
-const jsx = <MainContainer/>  
+const jsx = <MainContainer/>
 const d = document.getElementById('app');
 
-store.dispatch(actions.newGame())
-store.dispatch(actions.addGuess(10))
-store.dispatch(actions.addGuess(43))
-store.dispatch(actions.addGuess(81))
-store.dispatch(actions.newGame())
+// store.dispatch(actions.newGame())
+// store.dispatch(actions.addGuess(10))
+// store.dispatch(actions.addGuess(43))
+// store.dispatch(actions.addGuess(81))
+// store.dispatch(actions.newGame())
 
 ReactDOM.render(jsx, d)
 
 
-unsubscribe();
+// unsubscribe();
