@@ -1,7 +1,7 @@
 export const NEW_GAME = 'NEW_GAME';
-export const newGame = () => ({
+export const newGame = (range) => ({
 	type: NEW_GAME,
-	magicNum: Math.floor(Math.random() * 100) + 1
+	magicNum: Math.floor(Math.random() * (range || 100)) + 1
 })
 
 

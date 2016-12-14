@@ -15,8 +15,6 @@ export const mainReducer = (state = emptyState, action) => {
 		var diff = Math.abs(ln - un)
 		var won = false;
 
-		//index of return -1 if it cannot find number in array
-		//if it finds it, it will return index of number. 
 		if(state.guessedNumbers.indexOf(un) >= 0) {
 			feedback = `you already guessed ${un}`
 			return { ...state, feedback }
@@ -53,3 +51,6 @@ export const mainReducer = (state = emptyState, action) => {
 
 	return state;
 };
+
+		//index of return -1 if it cannot find number in array
+		//if it finds it, it will return index of number. 
