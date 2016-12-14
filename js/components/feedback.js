@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function Feedback(props) {
+const Feedback = props => {
 
 	return (
 		<div className="feedback">
-      {'test message'}
+      		{props.text}
 		</div>
 	);
 }
+
+export default Feedback;

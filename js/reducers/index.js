@@ -16,19 +16,19 @@ export const mainReducer = (state = emptyState, action) => {
 		var count = state.count;
 
 	    if (diff === 0) {
-			response += 'you are freaking incredible, wow good job, good effort'
-
+			response += 'eureka!'
 		} else if (diff <= 10) {
-   			response += 'you are so hot, i can\'t even compute'
-
-		} else if (diff <= 20) {
-			response += 'its okay... some of us are just not meant to win'
-
+   			response += 'hot'
+   		} else if (diff <= 20) {
+			response += 'warm'
+		} else if (diff <= 30) {
+			response += 'coolish'
 		} else if (diff <= 40) {
-			response += 'maybe you should just give up'
-
+			response += 'cool'
+		} else if(diff <= 50) {
+			response += 'ice'		
 		} else {
-			response += 'i honestly dont know what to tell ya.. '
+			response += 'frozen'
 		}
 		count++
 
@@ -43,7 +43,7 @@ export const mainReducer = (state = emptyState, action) => {
 		return { ...state,
 			answer: action.magicNum,
 			count: 0,
-			feedback: 'welcome, prepare to be destroyed',
+			feedback: 'welcome to guess a number',
 			guessedNumbers: []
 			}
 	}

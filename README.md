@@ -13,6 +13,9 @@ components
 			- guess feedback     b √
 
 			- input / submit     a √
+				-submit should work with
+				click and enter key
+				-
 
 			- guess count        b √
 
@@ -23,3 +26,8 @@ components
 Each component should live in a separate file
 
 - Wrap them in react-redux
+
+
+choose range
+
+
