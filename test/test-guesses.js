@@ -6,8 +6,8 @@ const should = chai.should();
 
 import Guesses from '../js/components/guesses';
 
-describe('feedback.js', () => {
-  it('Properly render', () => {
+describe('Guesses (guesses list)', () => {
+  it('Output ul list of guesses', () => {
     const guessList = [1,2,3];
     const renderer = TestUtils.createRenderer();
 

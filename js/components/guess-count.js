@@ -4,7 +4,7 @@ const GuessCount = props => {
 
 	return (
 		<div className="guess-count">
-      		<p>Guess Count: {props.text} </p>
+      		<p>Guess Count: {props.count} </p>
 		</div>
 	);
 }

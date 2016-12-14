@@ -4,7 +4,7 @@ import GameContainer from './gamecontainer'
 import { connect } from 'react-redux'
 import * as actions from '../actions'
 
-const MainContainer = (props) => {
+export const MainContainer = (props) => {
   const resetGame = () => {
     props.dispatch(actions.newGame());
   };

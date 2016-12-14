@@ -7,20 +7,16 @@ const should = chai.should();
 import Form from '../js/components/form';
 
 describe('form component', () => {
-    it.only('accepts a number between 1 - 100', () => {
-        const num = 10;
+    it('accepts a number between 1 - 100', () => {
+        const guess = 10;
         const renderer = TestUtils.createRenderer();
-        renderer.render(<Form onSubit={num}/>);
+        renderer.render(<Form onSubmit={''}/>);
         const result = renderer.getRenderOutput();
-        result.props.onSubmit.should.equal(num);
+        // console.log(result);
+        result.type.should.equal('div');
+        // input.props.ref.should.equal(guess)
 
-        // const img = result.props.children[0];
-        // img.type.should.equal('img');
-        // img.props.src.should.equal(url);
-        // img.props.alt.should.equal(description);
-
-        // const p = result.props.children[1];
-        // p.type.should.equal('p');
-        // p.props.children.should.equal(description);
+        const { props } = result;
+        // console.log(props.children[0]);
     });
 });
