@@ -1,6 +1,20 @@
+.gameContainer {
+  background-color: lightgrey;
+  padding: 15px;
+}
+
+.guesses {
+  list-style-type: none;
+}
+
 .won {
   font-size: 2em;
   color: red;
   background-color: lightblue;
   border: 1px solid red;
+  margin: 0 auto;
+  padding: 15px;
+  width: 60%;
+  margin-bottom: 25px;
+  margin-top: 25px;
 }
