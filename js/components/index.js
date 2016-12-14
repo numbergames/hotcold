@@ -1,10 +1,9 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import HelpNew from './help-new'
 import GameContainer from './gamecontainer'
-import { connect } from 'react-redux'
 import * as actions from '../actions'
 
-// function MainContainer(props) {function body...}
 const MainContainer = (props) => {
   const resetGame = () => {
     props.dispatch(actions.newGame());

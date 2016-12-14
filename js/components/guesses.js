@@ -1,12 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-export default function Guesses(props) {
+const Guesses = props => (
+	<ul className="guessbox">
+		{props.text.map((n, i) =>
+			<li key={i}>
+        {n}
+      </li>
+		)}
+	</ul>
+);
 
-	return (
-		<div className="guessbox">
-				{props.text.map(n => 
-   					<li key={n}>{n}</li>
-   					)}	
-		</div>
-		)
-}
+export default Guesses;

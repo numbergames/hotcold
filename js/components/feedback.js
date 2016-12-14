@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
 
-export default function Feedback(props) {
+const Feedback = props => {
 
+  const className = `feedback ${props.won ? 'won' : ''}`;
 
-	return (
-		<div className="feedback">
-      		{props.text}
-		</div>
-	);
+  return (
+  	<div className={className}>
+  		{props.feedback}
+  	</div>
+  );
 }
+
+export default Feedback;
