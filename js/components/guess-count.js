@@ -1,10 +1,12 @@
 import React from 'react'
 
-export default function GuessCount(props) {
+const GuessCount = props => {
 
 	return (
 		<div className="guess-count">
-      		{props.text}
+      		<p>Guess Count: {props.text} </p>
 		</div>
 	);
 }
+
+export default GuessCount;

@@ -13,13 +13,41 @@ components
 			- guess feedback     b √
 
 			- input / submit     a √
+				-submit should work with
+				click and enter key
+				-
 
 			- guess count        b √
 
 			- past guesses       a √
 
 ## Next steps:
-1. Create each of the components using dummy data, and update your Game component so they are rendered.
-Each component should live in a separate file
+1. testing
+  - test components
+  	- start page
+  	- main container 
+  	- help && new game 
+	- game container
+	- guess feedback 
+	- input / submit  
+	- guess count
+	- past guesses
+ 
+  - test redux
+  	- state
+  	- store 
 
-- Wrap them in react-redux
+2. start page
+  - in state boolean value if start page is true or false
+  - when game is loaded startpage: true
+  - when range is selected startpage: false
+
+modify range conditionals 
+  - ranged conditionals based off of a percent of range
+radio buttons
+  - easy (num) medium (num) hard (num)
+
+
+choose range
+
+

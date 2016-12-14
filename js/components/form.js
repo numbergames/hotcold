@@ -4,28 +4,39 @@ export default class Form extends Component {
   constructor(props) {
     super(props);
     this.onSubmit = this.onSubmit.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   onSubmit() {
-    console.log(this.textInput.value)
-
+    let userInput = parseInt(this.textInput.value);
+    if (userInput >= 0 && userInput < 100) {
+      this.props.onSubmit(this.textInput.value);
+    }
   }
 
-	render() {
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.onSubmit();
+    }
+  }
+
+  render() {
     return (
       <div>
-  			<input 
-          type="text" 
-          ref={(input) => { this.textInput = input; }}
+        <input
+          type="text"
           className="input"
+          onKeyPress={this.handleKeyPress}
+          ref={input => this.textInput = input}
         />
-  			<button 
-          type="button" 
-          className="submit" 
-          onClick={this.onSubmit}>Guess
+        <button
+          type="button"
+          className="submit"
+          onClick={this.onSubmit}
+        >
+          Guess
         </button>
       </div>
-  	);
+    );
   }
 }
-

@@ -1,14 +1,21 @@
 import React from 'react'
 
-// What props it needs to receive:
-// -- callback for game reset
-
-export default function HelpNew(props) {
+const HelpNew = props => {
 
 	return (
-		<h2 className="navbar">
-      {"help"}
-      <button type="submit" onSubmit={props.newGame}>New</button>
-		</h2>
+		<div className="navbar">
+      <button 
+      type="submit" 
+      onClick={() => window.alert("Type your guess in the box and press the Submit button.")}>
+        Help
+      </button>
+      <button 
+      type="submit" 
+      onClick={props.newGame}>
+        New
+      </button>
+		</div>
 	);
 }
+
+export default HelpNew;

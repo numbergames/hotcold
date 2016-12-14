@@ -2,49 +2,52 @@ import * as actions from '../actions/index';
 
 const emptyState = {
 	guessedNumbers: [],
-	answer: 34,
+	answer: -1,
 	feedback: 'make a guess',
 	count: 0
 }
 
 export const mainReducer = (state = emptyState, action) => {
 	if (action.type === actions.ADD_GUESS) {
-		var response = 'make your first guess';
+		var feedback = '';
 		var ln = state.answer;
 		var un = action.num;
 		var diff = Math.abs(ln - un)
-		var count = state.count;
+		var won = false;
 
-	    if (diff === 0) {
-			response += 'you are freaking incredible, wow good job, good effort'
-
+		//index of return -1 if it cannot find number in array
+		//if it finds it, it will return index of number. 
+		if(state.guessedNumbers.indexOf(un) >= 0) {
+			feedback = `you already guessed ${un}`
+			return { ...state, feedback }
+		} if (diff === 0) {
+			feedback = 'eureka!'
+			won = true
 		} else if (diff <= 10) {
-   			response += 'you are so hot, i can\'t even compute'
-
-		} else if (diff <= 20) {
-			response += 'its okay... some of us are just not meant to win'
-
+   			feedback = 'hot'
+   		} else if (diff <= 20) {
+			feedback = 'warm'
+		} else if (diff <= 30) {
+			feedback = 'coolish'
 		} else if (diff <= 40) {
-			response += 'maybe you should just give up'
-
+			feedback = 'cool'
+		} else if(diff <= 50) {
+			feedback = 'ice'		
 		} else {
-			response += 'i honestly dont know what to tell ya.. '
+			feedback = 'frozen'
 		}
-		count++
 
 		return { ...state,
 			guessedNumbers: [...state.guessedNumbers, action.num],
-			feedback: response,
-			count: count
+			count: state.count + 1,
+			feedback,
+			won
 			}
 	}
 
 	if(action.type === actions.NEW_GAME) {
-		return { ...state,
+		return { ...emptyState,
 			answer: action.magicNum,
-			count: 0,
-			feedback: 'welcome, prepare to be destroyed',
-			guessedNumbers: []
 			}
 	}
 
