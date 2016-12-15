@@ -7,33 +7,33 @@ import GuessCount from './guess-count'
 import Guesses from './guesses'
 
 export const GameContainer = props => {
-  const newGuess = (guess) => {
+  const newGuess = guess => {
     props.dispatch(actions.addGuess(guess));
   };
 
   return (
     <div className="gameContainer">
       <Feedback
-        text={ props.feedback }
-        won= { props.won }
+        text={props.feedback}
+        won= {props.won}
       />
       <hr />
       <Form
-        onSubmit={ newGuess }
+        onSubmit={newGuess}
       />
       <GuessCount
-        count={ props.count }
+        count={props.count}
       />
       <hr />
       <Guesses
-        guesses={ props.guessedNumbers }
+        guesses={props.guessedNumbers}
       />
     </div>
   );
 };
 
 const mapStateToProps = (state, props) => ({
-  feedback: state.feedback ,
+  feedback: state.feedback,
   count: state.count,
   guessedNumbers: state.guessedNumbers,
   won: state.won

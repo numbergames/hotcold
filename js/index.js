@@ -3,7 +3,7 @@ require('babel-polyfill');
 import * as actions from './actions/index'
 import ReactDOM from 'react-dom'
 import React from 'react'
-import {Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import store from './store'
 import MainContainer from './components/'
 
@@ -12,7 +12,7 @@ store.subscribe(() => console.log(store.getState()));
 const d = document.getElementById('app');
 
 ReactDOM.render(
-	<Provider store={ store }>
+	<Provider store={store}>
 		<MainContainer />
 	</Provider>, d
 );

@@ -15,7 +15,7 @@ export default class Form extends Component {
   }
 
   handleKeyPress(e) {
-    if (e.key === 'Enter') {
+    if (e.key === 'Enter' || e.key === 'Return') {
       this.onSubmit();
     }
   }

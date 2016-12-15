@@ -1,13 +1,11 @@
-import React from 'react'
-import HelpNew from './help-new'
-import GameContainer from './gamecontainer'
-import { connect } from 'react-redux'
-import * as actions from '../actions'
+import React from 'react';
+import HelpNew from './help-new';
+import GameContainer from './gamecontainer';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
 
 export const MainContainer = (props) => {
-  const resetGame = () => {
-    props.dispatch(actions.newGame());
-  };
+  const resetGame = () => props.dispatch(actions.newGame());
 
 	return (
 		<div className="MainContainer">
@@ -19,7 +17,7 @@ export const MainContainer = (props) => {
 			<GameContainer />
 		</div>
 	);
-}
+};
 
 const mapStateToProps = (state, props) => ({
   serverFewestGuesses: state.serverFewestGuesses,
