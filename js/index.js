@@ -1,11 +1,11 @@
-
+/*jshint esversion: 6 */
 require('babel-polyfill');
-import * as actions from './actions/index'
-import ReactDOM from 'react-dom'
-import React from 'react'
+import * as actions from './actions/index';
+import ReactDOM from 'react-dom';
+import React from 'react';
 import { Provider } from 'react-redux';
-import store from './store'
-import MainContainer from './components/'
+import store from './store';
+import MainContainer from './components/';
 
 store.subscribe(() => console.log(store.getState()));
 

@@ -34,11 +34,13 @@ Update your Hot or Cold app to track and display the fewest number of guesses so
 
 - handle the 2 new actions in reducers
 
-### GET to `/fewest-guesses`
+### GET from `/fewest-guesses`
 - get the server fewest guesses #
 
 ### POST to `/fewest-guesses`
 - on winning send the user's fewest guesses to server
+- server gets the number, compares it to the "high score" on record
+- if POSTed number is lower, server needs to update its record
   - Do we only send it if it's lower?  Or just always send?
 
 ## Component(s)
