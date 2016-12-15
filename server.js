@@ -5,8 +5,6 @@ var bodyParser = require('body-parser');
 
 var app = express();
 
-// enable CORS since we're running two servers
-
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -15,7 +13,7 @@ app.use(function(req, res, next) {
 
 app.use(bodyParser.json());
 
-var fewestGuesses = 100000; // meaning no high score on record
+var fewestGuesses = -1;
 
 app.get('/fewest-guesses', function(req, res) {
   return res.status(200).json({
@@ -26,7 +24,7 @@ app.get('/fewest-guesses', function(req, res) {
 app.post('/fewest-guesses', function(req, res) {
   var submittedScore = req.body.fewestGuesses;
 
-  if (submittedScore < fewestGuesses) {
+  if (fewestGuesses === -1 || submittedScore < fewestGuesses) {
     fewestGuesses = submittedScore;
     return res.status(200).json({
       message: 'New record'

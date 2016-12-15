@@ -1,8 +1,5 @@
-
 * {
-  font-family: 'Play', sans-serif;
-  font-family: 'Cookie', cursive;
-  font-size: 50px;
+  font-size: 1.1em;
 }
 
 hr {
@@ -56,4 +53,8 @@ li {
   margin-bottom: 25px;
   margin-top: 25px;
   border-radius: 10px;
+}
+
+.fewest-guesses {
+  background-color: lightblue;
 }

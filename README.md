@@ -4,19 +4,21 @@ Update your Hot or Cold app to track and display the fewest number of guesses so
 
 ## First you should create an API for saving and fetching the number of guesses:
 
-- Create a file called server.js that will contain a simple Node.js API
-- Set up Express, and make a GET and a POST endpoint to /fewest-guesses
-- When a GET request is made to /fewest-guesses it should return the fewest guesses taken to get the correct answer
-- The number of guesses can either be stored in-memory, or you can use a Mongo database
-- When a POST request is made to /fewest-guesses, it should update the guess count if the number of guesses provided is lower than the current best
-- Then update your app to fetch and send data to the API:
+- √ Create a file called server.js that will contain a simple Node.js API
+- √ Set up Express, and make a GET and a POST endpoint to /fewest-guesses
+- √ When a GET request is made to /fewest-guesses it should return the fewest guesses taken to get the correct answer
+- √ The number of guesses can either be stored in-memory, or you can use a Mongo database
+- √ When a POST request is made to /fewest-guesses, it should update the guess count if the number of guesses provided is lower than the current best
 
-- Add a fewestGuesses property to your Redux state
-- Update your app to display the fewestGuesses state in one of your components
-- Add two async actions (and their sync counterparts):
-  - fetchFewestGuesses which should fetch the fewest guesses from the endpoint
-  - saveFewestGuesses which should send a score to the fewest guesses endpoint
-- Dispatch the actions from your components so you keep track of the fewest guesses
+:thumbsup:
+
+- **Then update your app to fetch and send data to the API:**
+  - Add a fewestGuesses property to your Redux state
+  - Update your app to display the fewestGuesses state in one of your components
+  - Add two async actions (and their sync counterparts):
+    - fetchFewestGuesses which should fetch the fewest guesses from the endpoint
+    - saveFewestGuesses which should send a score to the fewest guesses endpoint
+  - Dispatch the actions from your components so you keep track of the fewest guesses
 
 # Pseudocode to implement API calls
 
