@@ -11,10 +11,19 @@ export const MainContainer = (props) => {
 
 	return (
 		<div className="MainContainer">
-			<HelpNew newGame={resetGame} />
+			<HelpNew
+        newGame={resetGame}
+        serverFewestGuesses={props.serverFewestGuesses}
+        userFewestGuesses={props.userFewestGuesses}
+      />
 			<GameContainer />
 		</div>
 	);
 }
 
-export default connect()(MainContainer);
+const mapStateToProps = (state, props) => ({
+  serverFewestGuesses: state.serverFewestGuesses,
+  userFewestGuesses: state.userFewestGuesses
+});
+
+export default connect(mapStateToProps)(MainContainer);

@@ -1,53 +1,50 @@
-# Hot or Cold
+# Exercise: Track the fewest guesses
 
-1. make components
-2. wrap them in react-redux
+Update your Hot or Cold app to track and display the fewest number of guesses someone took to beat the game by accessing a simple API.
 
-components
-	- main container             a √
+## First you should create an API for saving and fetching the number of guesses:
 
-		- help && new game       b √
+- Create a file called server.js that will contain a simple Node.js API
+- Set up Express, and make a GET and a POST endpoint to /fewest-guesses
+- When a GET request is made to /fewest-guesses it should return the fewest guesses taken to get the correct answer
+- The number of guesses can either be stored in-memory, or you can use a Mongo database
+- When a POST request is made to /fewest-guesses, it should update the guess count if the number of guesses provided is lower than the current best
+- Then update your app to fetch and send data to the API:
 
-		- game container         a √
+- Add a fewestGuesses property to your Redux state
+- Update your app to display the fewestGuesses state in one of your components
+- Add two async actions (and their sync counterparts):
+  - fetchFewestGuesses which should fetch the fewest guesses from the endpoint
+  - saveFewestGuesses which should send a score to the fewest guesses endpoint
+- Dispatch the actions from your components so you keep track of the fewest guesses
 
-			- guess feedback     b √
+# Pseudocode to implement API calls
 
-			- input / submit     a √
-				-submit should work with
-				click and enter key
-				-
+## State/Store new properties
+- Local fewest guesses (?)
+- Server fewest guesses
 
-			- guess count        b √
+## Server setup / code
+- express middleware
+- 1 endpoint
+- 2 responses
 
-			- past guesses       a √
+## Actions / Reducers
+- 2 new actions
 
-## Next steps:
-1. testing
-  - test components
-  	- start page
-  	- main container 
-  	- help && new game 
-	- game container
-	- guess feedback 
-	- input / submit  
-	- guess count
-	- past guesses
- 
-  - test redux
-  	- state
-  	- store 
+- handle the 2 new actions in reducers
 
-2. start page
-  - in state boolean value if start page is true or false
-  - when game is loaded startpage: true
-  - when range is selected startpage: false
+### GET to `/fewest-guesses`
+- get the server fewest guesses #
 
-modify range conditionals 
-  - ranged conditionals based off of a percent of range
-radio buttons
-  - easy (num) medium (num) hard (num)
+### POST to `/fewest-guesses`
+- on winning send the user's fewest guesses to server
+  - Do we only send it if it's lower?  Or just always send?
 
+## Component(s)
+### Header
+- display server fewest guesses
+- also display local fewest guesses (?)
 
-choose range
-
-
+### Header Container
+- pass in fewest guesses to Header

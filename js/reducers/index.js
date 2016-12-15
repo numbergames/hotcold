@@ -4,7 +4,9 @@ const emptyState = {
 	guessedNumbers: [],
 	answer: -1,
 	feedback: 'make a guess',
-	count: 0
+	count: 0,
+  userFewestGuesses: -1,     // ???
+  serverFewestGuesses: -1    // ???
 }
 
 export const mainReducer = (state = emptyState, action) => {
@@ -30,7 +32,7 @@ export const mainReducer = (state = emptyState, action) => {
 		} else if (diff <= 40) {
 			feedback = 'cool'
 		} else if(diff <= 50) {
-			feedback = 'ice'		
+			feedback = 'ice'
 		} else {
 			feedback = 'frozen'
 		}
@@ -53,4 +55,4 @@ export const mainReducer = (state = emptyState, action) => {
 };
 
 		//index of return -1 if it cannot find number in array
-		//if it finds it, it will return index of number. 
+		//if it finds it, it will return index of number.
